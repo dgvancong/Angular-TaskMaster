@@ -1,7 +1,6 @@
 .board {
   display: flex;
 }
-
 .column {
   width: 255px;
   margin: 10px;
@@ -10,13 +9,11 @@
   background-color: #f9f9f9;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
-
 .tasks {
   list-style: none;
   padding: 0;
   margin: 0;
 }
-
 .task {
   background-color: #fff;
   border: 1px solid #ddd;
@@ -32,7 +29,6 @@
   display: flex;
   justify-content: space-between;
 }
-
 .task:hover {
   background-color: #eaeaea;
   cursor: grab;
@@ -99,21 +95,6 @@
   max-height: 100%;
   fill: #FFFFFF;
   vertical-align: bottom;
-}
-
-
-._1tsagrho {
-  --expand-button-margin-left: 0px;
-}
-
-._iyyqgrho {
-  --expand-button-height: 0px;
-}
-._hilggrho {
-  --expand-button-width: 0px;
-}
-._59hlidpf {
-  --expand-collapse-button-opacity: 0;
 }
 ._1pbyegat {
   z-index: 4;
@@ -202,24 +183,6 @@
     padding: 0px;
     font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
     color: #006644;
-    font-size: 11px;
-    font-weight: 700;
-    line-height: 16px;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    text-transform: uppercase;
-}
-@supports (overflow-x: clip){
-  .css-1341esss {
-    overflow-x: clip;
-}
-}
-.css-1341esss {
-    box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-    font-family:  -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    color: #0055CC;
     font-size: 11px;
     font-weight: 700;
     line-height: 16px;
@@ -1335,7 +1298,6 @@ button {
 ._19pkv77o {
   margin-top: 2px;
 }
-
 ._2hwxutpp {
   margin-right: 9pt;
 }
@@ -2050,7 +2012,6 @@ form._1e0c1txw._4cvr1h6o {
 ._1c30otz2>div {
   padding: 0 4px;
 }
-
 ._1eim1xrj {
   direction: rtl;
 }
