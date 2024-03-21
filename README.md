@@ -29,25 +29,5 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 
 .css-1s25hsw[_ngcontent-ng-c2820448138] {
-    -webkit-box-align: center;
-    align-items: center;
-    background-color: #fafbfc;
-    /* border-color: #dfe1e6; */
-    color: #091e42;
-    cursor: text;
-    border-radius: 3px;
-    border-width: 2px;
     /* border-style: solid; */
-    box-sizing: border-box;
-    display: flex;
-    flex: 1 1 100%;
-    font-size: 14px;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    max-width: 100%;
-    overflow: hidden;
-    transition: background-color .2s ease-in-out 0s, border-color .2s ease-in-out 0s;
-    overflow-wrap: break-word;
-    vertical-align: top;
-    pointer-events: auto;
 }
