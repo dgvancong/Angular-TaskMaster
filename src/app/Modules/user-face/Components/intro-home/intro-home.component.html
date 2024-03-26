@@ -1,5 +1,5 @@
 <div class="navigation-container">
-  <nav class="navbar navbar-expand-sm navbar-white bg-white sticky">
+  <nav class="navbar navbar-expand-sm navbar-white bg-white top-navigation sticky site-header">
     <div class="container-fluid">
       <a class="navbar-brand" href="javascript:void(0)">
         <img src="./assets/logo/Default-Copy-5-2.png" style="width: 110px; height: 42px;" alt="">
@@ -9,8 +9,8 @@
       </button>
       <div class="collapse navbar-collapse" id="collapsibleNavbar">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Sản phẩm</a>
+          <li class="nav-item two-columns">
+            <a class="nav-link" nz-dropdown nzTrigger="click" [nzDropdownMenu]="product">Sản phẩm</a>
             <svg width="12px" height="20px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
               <g id="Icons/Disclosure/Down" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                 <path
@@ -19,6 +19,177 @@
               </g>
             </svg>
           </li>
+          <nz-dropdown-menu #product="nzDropdownMenu" >
+            <div id="product-dropdown" class="popover active" style="max-width: 100dvw;">
+              <ul class="sub-menu mega">
+                <li>
+                  <div class="mega-heading"><span>Khám phá</span></div>
+                  <div>
+                    <ul class="mega-section two-columns">
+                      <li>
+                        <div class="mega-icon-link">
+                          <a href="https://www.meistertask.com/pages/product-tour">
+                            <img class="mr-15 filter-blue" width="24" height="24" src="//cdn3.meistertask.com/assets/meister_assets/icons/general/Task-c4a95ce790a79d27a9e58eb34151ac3ce6fc719077b088cbcbfee3460e7a93d8.svg">
+                            <div>
+                              <span class="heading mb-10">
+                                Tại sao Task Software?
+                                <span class="icon arrow grey500 ml-15">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16">
+                                    <path fill="#000" fill-rule="evenodd"
+                                      d="M11.12006.59658l5.6581 6.06226c.7172.76841.7172 1.96086 0 2.72927l-5.6581 6.06226c-.56525.60563-1.51443.63836-2.12006.0731-.60564-.56525-.6384-1.51445-.07318-2.12012l2.83618-3.03917c.1884-.20189.17748-.51828-.02441-.70669a.5.5 0 00-.34116-.13445L1.5 9.52342C.6716 9.52345.00003 8.85193 0 8.02353v-.00005c0-.82844.67156-1.50003 1.5-1.50006l9.8974-.00038c.27615 0 .5-.22387.49999-.50002a.5.5 0 00-.13449-.34115L8.92693 2.64351c-.56526-.6056-.53255-1.55475.07304-2.12L9 .52348c.60563-.56525 1.5548-.53252 2.12006.0731z" />
+                                  </svg>
+                                </span>
+                              </span>
+                              <span class="description">Đơn giản. Trực giác. Chắc chắn.</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mega-icon-link">
+                          <a href="https://www.meistertask.com/pages/kanban-board">
+                            <img class="mr-15 filter-orange" width="24" height="24" src="//cdn4.meistertask.com/assets/meister_assets/icons/library/ProjectBoard-ce206b60bc678f77ab82ba7a9ad23c6826eea2b5528fd1e3e6c1d585956de082.svg">
+                            <div>
+                              <span class="heading mb-10">
+                                Bảng Kanban
+                                <span class="icon arrow grey500 ml-15">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16">
+                                    <path fill="#000" fill-rule="evenodd"
+                                      d="M11.12006.59658l5.6581 6.06226c.7172.76841.7172 1.96086 0 2.72927l-5.6581 6.06226c-.56525.60563-1.51443.63836-2.12006.0731-.60564-.56525-.6384-1.51445-.07318-2.12012l2.83618-3.03917c.1884-.20189.17748-.51828-.02441-.70669a.5.5 0 00-.34116-.13445L1.5 9.52342C.6716 9.52345.00003 8.85193 0 8.02353v-.00005c0-.82844.67156-1.50003 1.5-1.50006l9.8974-.00038c.27615 0 .5-.22387.49999-.50002a.5.5 0 00-.13449-.34115L8.92693 2.64351c-.56526-.6056-.53255-1.55475.07304-2.12L9 .52348c.60563-.56525 1.5548-.53252 2.12006.0731z" />
+                                  </svg>
+                                </span>                              </span>
+                              <span class="description">Trực quan hóa quy trình công việc của bạn.</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mega-icon-link">
+                          <a href="https://www.meistertask.com/pages/features">
+                            <img class="mr-15 filter-navy" width="24" height="24" src="//cdn3.meistertask.com/assets/meister_assets/icons/library/Checklist-1455aa9bbc5b0068b5d83a430ca450f589d8ad88fc46de85f79fdcd80b1be8fe.svg">
+                            <div>
+                              <span class="heading mb-10">
+                                Đặc trưng
+                                <span class="icon arrow grey500 ml-15">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16">
+                                    <path fill="#000" fill-rule="evenodd"
+                                      d="M11.12006.59658l5.6581 6.06226c.7172.76841.7172 1.96086 0 2.72927l-5.6581 6.06226c-.56525.60563-1.51443.63836-2.12006.0731-.60564-.56525-.6384-1.51445-.07318-2.12012l2.83618-3.03917c.1884-.20189.17748-.51828-.02441-.70669a.5.5 0 00-.34116-.13445L1.5 9.52342C.6716 9.52345.00003 8.85193 0 8.02353v-.00005c0-.82844.67156-1.50003 1.5-1.50006l9.8974-.00038c.27615 0 .5-.22387.49999-.50002a.5.5 0 00-.13449-.34115L8.92693 2.64351c-.56526-.6056-.53255-1.55475.07304-2.12L9 .52348c.60563-.56525 1.5548-.53252 2.12006.0731z" />
+                                  </svg>
+                                </span>                              </span>
+                              <span class="description">Nhận được nhiều hơn từ quản lý tác vụ.</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mega-icon-link">
+                          <a href="https://www.meistertask.com/pages/documentation">
+                            <img class="mr-15 filter-purple" width="24" height="24" src="//cdn1.meistertask.com/assets/meister_assets/icons/library/Files-9213c79b0f1fce16d5c6073d70806ff92a5cad823d4dfa38d6d3b479757bc2d9.svg">
+                            <div>
+                              <span class="heading mb-10">
+                                Tài liệu dự án
+                                <span class="icon arrow grey500 ml-15">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16">
+                                    <path fill="#000" fill-rule="evenodd"
+                                      d="M11.12006.59658l5.6581 6.06226c.7172.76841.7172 1.96086 0 2.72927l-5.6581 6.06226c-.56525.60563-1.51443.63836-2.12006.0731-.60564-.56525-.6384-1.51445-.07318-2.12012l2.83618-3.03917c.1884-.20189.17748-.51828-.02441-.70669a.5.5 0 00-.34116-.13445L1.5 9.52342C.6716 9.52345.00003 8.85193 0 8.02353v-.00005c0-.82844.67156-1.50003 1.5-1.50006l9.8974-.00038c.27615 0 .5-.22387.49999-.50002a.5.5 0 00-.13449-.34115L8.92693 2.64351c-.56526-.6056-.53255-1.55475.07304-2.12L9 .52348c.60563-.56525 1.5548-.53252 2.12006.0731z" />
+                                  </svg>
+                                </span>                              </span>
+                              <span class="description">                                Xem hình ảnh lớn hơn.</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mega-icon-link">
+                          <a href="https://www.meistertask.com/pages/integrations">
+                            <img class="mr-15 filter-yellow" width="24" height="24" src="//cdn2.meistertask.com/assets/meister_assets/icons/library/Integration-c038af3111374ba5c877c491be9c6366fcb5d640cf2a0e1d0b3c81c51038f739.svg">
+                            <div>
+                              <span class="heading mb-10">
+                                Tích hợp
+                                <span class="icon arrow grey500 ml-15">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16">
+                                    <path fill="#000" fill-rule="evenodd"
+                                      d="M11.12006.59658l5.6581 6.06226c.7172.76841.7172 1.96086 0 2.72927l-5.6581 6.06226c-.56525.60563-1.51443.63836-2.12006.0731-.60564-.56525-.6384-1.51445-.07318-2.12012l2.83618-3.03917c.1884-.20189.17748-.51828-.02441-.70669a.5.5 0 00-.34116-.13445L1.5 9.52342C.6716 9.52345.00003 8.85193 0 8.02353v-.00005c0-.82844.67156-1.50003 1.5-1.50006l9.8974-.00038c.27615 0 .5-.22387.49999-.50002a.5.5 0 00-.13449-.34115L8.92693 2.64351c-.56526-.6056-.53255-1.55475.07304-2.12L9 .52348c.60563-.56525 1.5548-.53252 2.12006.0731z" />
+                                  </svg>
+                                </span>                              </span>
+                              <span class="description">Làm việc với các công cụ bạn yêu thích.</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mega-icon-link">
+                          <a href="https://www.meistertask.com/pages/security">
+                            <img class="mr-15 filter-green" width="24" height="24" src="//cdn1.meistertask.com/assets/meister_assets/icons/library/Secure-24ae658212e6ac7298827b9ca34e0bb57ef124d4f30e60f47629fe16156916c2.svg">
+                            <div>
+                              <span class="heading mb-10">
+                                Bảo vệ
+                                <span class="icon arrow grey500 ml-15">
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16">
+                                    <path fill="#000" fill-rule="evenodd"
+                                      d="M11.12006.59658l5.6581 6.06226c.7172.76841.7172 1.96086 0 2.72927l-5.6581 6.06226c-.56525.60563-1.51443.63836-2.12006.0731-.60564-.56525-.6384-1.51445-.07318-2.12012l2.83618-3.03917c.1884-.20189.17748-.51828-.02441-.70669a.5.5 0 00-.34116-.13445L1.5 9.52342C.6716 9.52345.00003 8.85193 0 8.02353v-.00005c0-.82844.67156-1.50003 1.5-1.50006l9.8974-.00038c.27615 0 .5-.22387.49999-.50002a.5.5 0 00-.13449-.34115L8.92693 2.64351c-.56526-.6056-.53255-1.55475.07304-2.12L9 .52348c.60563-.56525 1.5548-.53252 2.12006.0731z" />
+                                  </svg>
+                                </span>                              </span>
+                              <span class="description">Bảo vệ tài sản trí tuệ của bạn..</span>
+                            </div>
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+                <li>
+                  <div class="mega-heading"><span>Liên kết hữu ích</span></div>
+                  <div>
+                    <ul class="mega-section">
+                      <li>
+                        <div class="mega-button">
+                          <a href="https://www.meistertask.com/pages/customer-stories/">
+                            <img class="mr-15 filter-pink" width="20" height="20" src="//cdn2.meistertask.com/assets/meister_assets/icons/library/StarSegment-d1425f3a2f1e596846e927e1349b748e4db2c2c6ad8a8790036e962c8da50213.svg">
+                            Câu chuyện khách hàng
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mega-button">
+                          <a href="https://www.meistertask.com/pages/webinars">
+                            <img class="mr-15 filter-navy" width="20" height="20" src="//cdn2.meistertask.com/assets/meister_assets/icons/library/StarSegment-d1425f3a2f1e596846e927e1349b748e4db2c2c6ad8a8790036e962c8da50213.svg">
+                            Hội thảo
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mega-button">
+                          <a href="https://www.meistertask.com/blog">
+                            <img class="mr-15 filter-orange" width="20" height="20" src="//cdn2.meistertask.com/assets/meister_assets/icons/library/StarSegment-d1425f3a2f1e596846e927e1349b748e4db2c2c6ad8a8790036e962c8da50213.svg">
+                            Blog
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mega-button">
+                          <a href="https://www.meistertask.com/pages/apps">
+                            <img class="mr-15 filter-turquoise" width="20" height="20" src="//cdn2.meistertask.com/assets/meister_assets/icons/library/StarSegment-d1425f3a2f1e596846e927e1349b748e4db2c2c6ad8a8790036e962c8da50213.svg">
+                            Ứng dụng di động
+                          </a>
+                        </div>
+                      </li>
+                      <li>
+                        <div class="mega-button">
+                          <a href="https://www.meistertask.com/pages/partners">
+                            <img class="mr-15 filter-purple" width="20" height="20" src="//cdn2.meistertask.com/assets/meister_assets/icons/library/StarSegment-d1425f3a2f1e596846e927e1349b748e4db2c2c6ad8a8790036e962c8da50213.svg">
+                            Đối tác
+                          </a>
+                        </div>
+                      </li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </nz-dropdown-menu>
+
+
           <li class="nav-item">
             <a class="nav-link" href="javascript:void(0)">Sử dụng</a>
             <svg width="12px" height="20px" viewBox="0 0 24 24" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -32,22 +203,20 @@
             </svg>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Doanh nghiệp</a>
+            <a class="nav-link">Doanh nghiệp</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Định giá</a>
+            <a class="nav-link">Định giá</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="javascript:void(0)">Liên hệ</a>
+            <a class="nav-link">Liên hệ</a>
           </li>
         </ul>
         <div class="top-right-wrapper">
           <ul class="h-flex-grid top-right-menu">
-            <li class="menu-item">
+            <li class="menu-item d-flex justify-content-between align-items-center">
               <a id="signin" class="td-none fs-l fw-medium cta-track-button" href="/user/login">Đăng nhập</a>
-            </li>
-            <li class="menu-item">
-              <a href="/user/login" class="button blue large with-icon cta-track-button" style="margin-left: 25px"> Đăng ký
+              <a href="/user/login" class="button blue large with-icon cta-track-button ml-15"> Đăng ký
                 <span class="icon arrow white ml-15">
                   <svg xmlns="http://www.w3.org/2000/svg" width="18" height="16">
                     <path fill="#000" fill-rule="evenodd"
@@ -58,6 +227,7 @@
             </li>
           </ul>
         </div>
+
       </div>
     </div>
   </nav>
