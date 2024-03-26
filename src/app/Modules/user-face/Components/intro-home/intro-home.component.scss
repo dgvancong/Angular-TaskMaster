@@ -634,3 +634,8 @@ $font-size-h1: 48px;
     width: 100%;
 }
 }
+@media (min-width: 576px) {
+  .sitemap.justify-content-center.text-white {
+    display: block;
+  }
+}
