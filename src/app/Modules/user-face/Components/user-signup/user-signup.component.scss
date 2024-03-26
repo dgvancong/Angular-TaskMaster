@@ -87,29 +87,29 @@
 .css-q5x77e {
   margin-top: var(--ds-space-100, 8px);
 }
-// .css-1s25hsw {
-//   -webkit-box-align: center;
-//   align-items: center;
-//   background-color: var(--ds-background-input, #FAFBFC);
-//   border-color: var(--ds-border-input, #DFE1E6);
-//   color: var(--ds-text, #091E42);
-//   cursor: text;
-//   border-radius: 3px;
-//   border-width: 2px;
-//   border-style: solid;
-//   box-sizing: border-box;
-//   display: flex;
-//   flex: 1 1 100%;
-//   font-size: 14px;
-//   -webkit-box-pack: justify;
-//   justify-content: space-between;
-//   max-width: 100%;
-//   overflow: hidden;
-//   transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
-//   overflow-wrap: break-word;
-//   vertical-align: top;
-//   pointer-events: auto;
-// }
+.css-1s25hsw {
+  -webkit-box-align: center;
+  align-items: center;
+  background-color: var(--ds-background-input, #FAFBFC);
+  border-color: var(--ds-border-input, #DFE1E6);
+  color: var(--ds-text, #091E42);
+  cursor: text;
+  border-radius: 3px;
+  border-width: 2px;
+  border-style: solid;
+  box-sizing: border-box;
+  display: flex;
+  flex: 1 1 100%;
+  font-size: 14px;
+  -webkit-box-pack: justify;
+  justify-content: space-between;
+  max-width: 100%;
+  overflow: hidden;
+  transition: background-color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;
+  overflow-wrap: break-word;
+  vertical-align: top;
+  pointer-events: auto;
+}
 .css-1cab8vv:placeholder-shown {
   text-overflow: ellipsis;
 }
