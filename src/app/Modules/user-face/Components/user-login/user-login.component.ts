@@ -7,6 +7,9 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { UserInterfaceService } from '../../user-interface.service';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
+import { InputTextModule } from 'primeng/inputtext';
+import { InputGroupModule } from 'primeng/inputgroup';
+import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
 
 @Component({
   selector: 'app-user-login',
@@ -19,6 +22,9 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
     HttpClientModule,
     FormsModule,
     NzAlertModule,
+    InputTextModule,
+    InputGroupModule,
+    InputGroupAddonModule
   ],
   templateUrl: './user-login.component.html',
   styleUrl: './user-login.component.scss'
