@@ -73,7 +73,7 @@
                     <label for="roleID">Chức vụ:</label>
                     <div role="presentation" class="">
                       <nz-select id="roleID" name="roleID" [(ngModel)]="user.roleID" required class="css-1cab8vv" nzShowSearch nzAllowClear nzPlaceHolder="Chọn chức danh của mình">
-                        <nz-option *ngFor="let role of roles.data" [nzLabel]="role.roleName" [nzValue]="role.roleID"></nz-option>
+                        <nz-option *ngFor="let role of roles" [nzLabel]="role.roleName" [nzValue]="role.roleID"></nz-option>
                       </nz-select>
                     </div>
                   </div>

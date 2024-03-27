@@ -8,9 +8,7 @@ import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzMessageService } from 'ng-zorro-antd/message';
 import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { Task } from '../../../../Shares/user-model/taskList';
-import { Role } from '../../../../Shares/user-model/roles';
-
+import { Role, ResponseData } from '../../../../Shares/user-model/roles';
 
 @Component({
   selector: 'app-user-signup',
@@ -28,6 +26,7 @@ import { Role } from '../../../../Shares/user-model/roles';
     NzSelectModule
   ]
 })
+
 export class UserSignupComponent implements OnInit {
   user = {
     picture: '/assets/img/ee2660df9335718b1a80.svg',
@@ -37,7 +36,7 @@ export class UserSignupComponent implements OnInit {
     phoneNumber: '',
     roleID: ''
   };
-  roles: any[] = [];
+  roles: Role[] = [];
   selectedValue: any;
   showPassword = false;
   constructor(private userService: UserInterfaceService, private message: NzMessageService){}
@@ -52,8 +51,8 @@ export class UserSignupComponent implements OnInit {
 
   fetchRoles() {
     this.userService.getRoles().subscribe(
-      (response: Role[]) => {
-        this.roles = response;
+      (response: ResponseData) => {
+        this.roles = response.data;
         console.log(response);
       },
       (error) => {
@@ -65,7 +64,7 @@ export class UserSignupComponent implements OnInit {
   registerUser() {
     this.userService.registerUser(this.user).subscribe(
       (response) => {
-        this.message.error('Đăng ký thành công.');
+        this.message.success('Đăng ký thành công.');
       },
       (error) => {
         this.message.error('Đăng ký thất bại. Vui lòng kiểm tra lại thông tin đăng ký.');
