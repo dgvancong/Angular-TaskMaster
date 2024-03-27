@@ -4,7 +4,7 @@
       <section role="main" class="css-y1ezbx">
         <div class="css-146wmq">
           <span aria-label="Atlassian" role="img" class="css-a3l9jr"style="--logo-color: inherit; --logo-fill: currentColor">
-            <img src="/assets/logo/Atlassian-horizontal-blue-rgb.svg" width="220px" alt="" />
+            <img src="./assets/logo/1-1.png"  alt="Logo Task Software" />
           </span>
           <div class="css-321lzd">
             <h5>Đăng ký để tiếp tục</h5>
@@ -73,7 +73,7 @@
                     <label for="roleID">Chức vụ:</label>
                     <div role="presentation" class="">
                       <nz-select id="roleID" name="roleID" [(ngModel)]="user.roleID" required class="css-1cab8vv" nzShowSearch nzAllowClear nzPlaceHolder="Chọn chức danh của mình">
-                        <nz-option *ngFor="let role of roles" [nzLabel]="role.roleName" [nzValue]="role.roleID"></nz-option>
+                        <nz-option *ngFor="let role of roles.data" [nzLabel]="role.roleName" [nzValue]="role.roleID"></nz-option>
                       </nz-select>
                     </div>
                   </div>
@@ -139,5 +139,3 @@
   </div>
 </div>
 </div>
-<nz-alert *ngIf="registrationSuccess" nzType="success" nzMessage="Đăng ký tài khoản thành công" nzShowIcon></nz-alert>
-<nz-alert *ngIf="registrationError" nzType="error" nzMessage="Đăng ký tài khoản không thành công" nzShowIcon></nz-alert>

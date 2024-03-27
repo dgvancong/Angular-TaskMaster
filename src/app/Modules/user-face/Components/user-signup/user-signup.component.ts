@@ -1,13 +1,16 @@
 import { Component, OnInit } from '@angular/core';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { RouterModule } from '@angular/router';
-import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { UserInterfaceService } from '../../user-interface.service';
 import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { NzSelectModule } from 'ng-zorro-antd/select';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Task } from '../../../../Shares/user-model/taskList';
+import { Role } from '../../../../Shares/user-model/roles';
+
 
 @Component({
   selector: 'app-user-signup',
@@ -36,35 +39,36 @@ export class UserSignupComponent implements OnInit {
   };
   roles: any[] = [];
   selectedValue: any;
-  registrationSuccess = false;
-  registrationError = false;
   showPassword = false;
-  constructor(private userService: UserInterfaceService){}
+  constructor(private userService: UserInterfaceService, private message: NzMessageService){}
+
   ngOnInit(): void {
     this.fetchRoles();
   }
+
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
+
   fetchRoles() {
     this.userService.getRoles().subscribe(
-      (response) => {
+      (response: Role[]) => {
         this.roles = response;
+        console.log(response);
       },
       (error) => {
         console.error('Error fetching roles:', error);
       }
     );
   }
+
   registerUser() {
     this.userService.registerUser(this.user).subscribe(
       (response) => {
-        this.registrationSuccess = true;
-        this.registrationError = false;
+        this.message.error('Đăng ký thành công.');
       },
       (error) => {
-        this.registrationSuccess = false;
-        this.registrationError = true;
+        this.message.error('Đăng ký thất bại. Vui lòng kiểm tra lại thông tin đăng ký.');
       }
     );
   }

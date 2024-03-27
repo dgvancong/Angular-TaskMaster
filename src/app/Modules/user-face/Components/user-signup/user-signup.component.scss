@@ -3,6 +3,7 @@
   position: relative;
   z-index: 1;
   flex: 1 1 auto;
+  padding-top: 35px;
 }
 .css-nx4o62 {
   position: absolute;
@@ -44,16 +45,14 @@
 .css-a3l9jr {
   display: inline-block;
   position: relative;
-  color: var(--logo-color);
-  fill: var(--logo-fill);
   line-height: 1;
   user-select: none;
   white-space: normal;
-  height: 40px;
 }
 .css-a3l9jr > img {
   height: 100%;
   fill: inherit;
+  width: 260px;
 }
 .css-321lzd {
   display: flex;
@@ -162,7 +161,7 @@
   height: 24px;
   width: 24px;
   float: right;
-  margin-top: -31px;
+  margin-top: -34px;
   margin-right: 6px;
   position: relative;
 }

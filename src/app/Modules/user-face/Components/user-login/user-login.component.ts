@@ -1,15 +1,14 @@
-import { Component} from '@angular/core';
-import { RouterModule, Router  } from '@angular/router';
+import { Component } from '@angular/core';
+import { RouterModule, Router } from '@angular/router';
 import { NzIconModule } from 'ng-zorro-antd/icon';
-import { ReactiveFormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
 import { UserInterfaceService } from '../../user-interface.service';
-import { NzAlertModule } from 'ng-zorro-antd/alert';
 import { InputTextModule } from 'primeng/inputtext';
 import { InputGroupModule } from 'primeng/inputgroup';
 import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-user-login',
@@ -21,7 +20,6 @@ import { InputGroupAddonModule } from 'primeng/inputgroupaddon';
     ReactiveFormsModule,
     HttpClientModule,
     FormsModule,
-    NzAlertModule,
     InputTextModule,
     InputGroupModule,
     InputGroupAddonModule
@@ -35,26 +33,20 @@ export class UserLoginComponent {
     password: ''
   };
   showPassword = false;
-  loginSuccess = false;
-  loginError = false;
-  constructor(private userService: UserInterfaceService,private router: Router){}
+  constructor(private userService: UserInterfaceService, private router: Router, private message: NzMessageService) { }
   login() {
     this.userService.login(this.user).subscribe(
       (response) => {
-        console.log('Login successful:', response);
-        this.loginSuccess = true;
-        this.loginError = false;
-        setTimeout(() => {
+        this.message.success('Đăng nhập thành công').onClose.subscribe(() => {
           this.router.navigate(['/user/welcome-home']);
-        }, 1000);
+        });
       },
       (error) => {
-        console.error('Login failed:', error);
-        this.loginSuccess = false;
-        this.loginError = true;
+        this.message.error('Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.');
       }
     );
   }
+
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }

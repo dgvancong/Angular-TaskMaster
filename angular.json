@@ -74,12 +74,16 @@
         },
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+          },
           "configurations": {
             "production": {
-              "buildTarget": "FE-Snap-Angular:build:production"
+              "buildTarget": "FE-Snap-Angular:build:production",
+              "proxyConfig": "./proxy.conf.json"
             },
             "development": {
-              "buildTarget": "FE-Snap-Angular:build:development"
+              "buildTarget": "FE-Snap-Angular:build:development",
+              "proxyConfig": "./proxy.conf.json"
             }
           },
           "defaultConfiguration": "development"

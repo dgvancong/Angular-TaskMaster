@@ -1,0 +1,11 @@
+{
+  "/api": {
+    "target": "https://taskmasternodejs.vercel.app/",
+    "secure": false,
+    "pathRewrite": {
+      "^/api": ""
+    },
+    "changeOrigin": true,
+    "@logLevel": "debug"
+  }
+}

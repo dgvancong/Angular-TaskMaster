@@ -4,7 +4,7 @@
       <section role="main" class="css-y1ezbx">
         <div class="css-146wmq">
           <span aria-label="Atlassian" role="img" class="css-a3l9jr">
-            <img src="/assets/logo/Atlassian-horizontal-blue-rgb.svg" width="220px" alt="" />
+            <img src="./assets/logo/1-1.png"  alt="Logo Task Software" />
           </span>
           <div class="css-321lzd">
             <h5>Đăng nhập để tiếp tục</h5>
@@ -23,7 +23,7 @@
                             <i class="pi pi-envelope"></i>
                         </p-inputGroupAddon>
                         <span class="p-float-label">
-                          <input pInputText id="emailAddress" type="email" [(ngModel)]="user.emailAddress" require />
+                          <input pInputText id="emailAddress" type="email" [(ngModel)]="user.emailAddress" [ngModelOptions]="{standalone: true}" require />
                           <label for="emailAddress">Nhập email của bạn</label>
                         </span>
                       </p-inputGroup>
@@ -42,7 +42,7 @@
                               <i class="pi pi-key"></i>
                           </p-inputGroupAddon>
                           <span class="p-float-label">
-                            <input type="{{ showPassword ? 'text' : 'password' }}" pInputText id="password" type="password" [(ngModel)]="user.password" require />
+                            <input type="{{ showPassword ? 'text' : 'password' }}" pInputText id="password" type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" require />
                             <label for="password">Nhập mật khẩu của bạn</label>
                           </span>
                         </p-inputGroup>
@@ -93,7 +93,7 @@
               <img class="js-lazy-image js-lazy-image-handled" src="https://accounts.meister.co/assets/logos/meister-27fd015ca8f73c140b4ededc62aaf1d76a876bf2cdbe88d3b2429d585edf0ad7.svg" width="138" height="32">
             </span>
             <div class="css-ftz4sr">
-              Một tài khoản cho Jira, Confluence, Trello và
+              Một tài khoản cho Task và
               <a id="atlassian-account-link-more-short" target="_blank" rel="noreferrer noopener"
                 class="css-1gc25jr">sản phẩm khác</a>.
             </div>
@@ -112,5 +112,3 @@
     </div>
   </div>
 </div>
-<nz-alert *ngIf="loginSuccess" nzType="success" nzMessage="Đăng nhập tài khoản thành công" nzShowIcon></nz-alert>
-<nz-alert *ngIf="loginError" nzType="error" nzMessage="Đăng nhập tài khoản không thành công" nzShowIcon></nz-alert>

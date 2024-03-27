@@ -12,7 +12,7 @@ export class UserInterfaceService {
   constructor(private http: HttpClient) { }
 
   // Phần Project
-  private projectUrl = 'http://localhost:3000/project';
+  private projectUrl = 'https://taskmasternodejs.vercel.app/project';
 
   getProejct(): Observable<any> {
     return this.http.get<any>(`${this.projectUrl}`);
@@ -35,13 +35,13 @@ export class UserInterfaceService {
   }
 
   // Phần User
-  private apiUrl = 'http://localhost:3000/user';
+  private apiUrl = 'https://taskmasternodejs.vercel.app/user';
 
   getUsers(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}`);
   }
   registerUser(user: any): Observable<any> {
-    return this.http.post<any>(`${this.apiUrl}/register`, user);
+    return this.http.post<any>(`${this.apiUrl}/register/`, user);
   }
   login(user: { emailAddress: string; password: string }) {
     return this.http.post<any>(`${this.apiUrl}/login`, user).pipe(
@@ -63,7 +63,7 @@ export class UserInterfaceService {
   }
 
   // Phần Task
-  private taskUrl = 'http://localhost:3000/task';
+  private taskUrl = 'https://taskmasternodejs.vercel.app/task';
 
   getTask(): Observable<any> {
     return this.http.get<any>(`${this.taskUrl}`);
@@ -94,7 +94,7 @@ export class UserInterfaceService {
   }
 
   // team
-  private teamUrl = 'http://localhost:3000/team';
+  private teamUrl = 'https://taskmasternodejs.vercel.app/team';
 
   getTeams(): Observable<any> {
     return this.http.get<any>(`${this.teamUrl}`);
@@ -109,7 +109,7 @@ export class UserInterfaceService {
   }
 
   // Roles
-  private rolesUrl = 'http://localhost:3000/roles';
+  private rolesUrl = 'https://taskmasternodejs.vercel.app/roles';
 
   getRoles(): Observable<any> {
     return this.http.get<any>(`${this.rolesUrl}`);
@@ -121,11 +121,11 @@ export class UserInterfaceService {
 
 
   // Comment
-  private commentUrl = 'http://localhost:3000/Comment';
+  // private commentUrl = 'http://localhost:3000/Comment';
 
-  getComment(): Observable<any> {
-    return this.http.get<any>(`${this.commentUrl}`);
-  }
+  // getComment(): Observable<any> {
+  //   return this.http.get<any>(`${this.commentUrl}`);
+  // }
 
 
 
