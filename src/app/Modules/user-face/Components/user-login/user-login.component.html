@@ -3,7 +3,7 @@
     <div class="css-1iefl20">
       <section role="main" class="css-y1ezbx">
         <div class="css-146wmq">
-          <span aria-label="Atlassian" role="img" class="css-a3l9jr">
+          <span role="img" class="css-a3l9jr">
             <img src="./assets/logo/1-1.png"  alt="Logo Task Software" />
           </span>
           <div class="css-321lzd">
@@ -12,7 +12,7 @@
         </div>
         <div>
           <span></span>
-          <form id="form-login" class="css-r44k6v">
+          <form #userForm="ngForm" class="css-r44k6v">
             <div class="css-env1z2">
               <div class="css-cnfgt3">
                 <div class="css-xcejzt">
@@ -23,7 +23,7 @@
                             <i class="pi pi-envelope"></i>
                         </p-inputGroupAddon>
                         <span class="p-float-label">
-                          <input pInputText id="emailAddress" type="email" [(ngModel)]="user.emailAddress" [ngModelOptions]="{standalone: true}" require />
+                          <input pInputText id="emailAddress" name="emailAddress" type="email" [(ngModel)]="user.emailAddress" [ngModelOptions]="{standalone: true}" require />
                           <label for="emailAddress">Nhập email của bạn</label>
                         </span>
                       </p-inputGroup>
@@ -42,7 +42,7 @@
                               <i class="pi pi-key"></i>
                           </p-inputGroupAddon>
                           <span class="p-float-label">
-                            <input type="{{ showPassword ? 'text' : 'password' }}" pInputText id="password" type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" require />
+                            <input type="{{ showPassword ? 'text' : 'password' }}" name="password" pInputText id="password" type="password" [(ngModel)]="user.password" [ngModelOptions]="{standalone: true}" require />
                             <label for="password">Nhập mật khẩu của bạn</label>
                           </span>
                         </p-inputGroup>
@@ -94,17 +94,16 @@
             </span>
             <div class="css-ftz4sr">
               Một tài khoản cho Task và
-              <a id="atlassian-account-link-more-short" target="_blank" rel="noreferrer noopener"
-                class="css-1gc25jr">sản phẩm khác</a>.
+              <a class="css-1gc25jr">sản phẩm khác</a>.
             </div>
           </footer>
           <ul class="fine-print">
             <li>
-              <a target="_blank" rel="noreferrer noopener" class="css-1gc25jr">Chính sách quyền riêng tư</a>
+              <a href="#" class="css-1gc25jr">Chính sách quyền riêng tư</a>
             </li>
             <p class="css-1x34ed1">•</p>
             <li>
-              <a target="_blank" rel="noreferrer noopener" class="css-1gc25jr">Lưu ý dành cho người dùng</a>
+              <a href="#" class="css-1gc25jr">Lưu ý dành cho người dùng</a>
             </li>
           </ul>
         </div>

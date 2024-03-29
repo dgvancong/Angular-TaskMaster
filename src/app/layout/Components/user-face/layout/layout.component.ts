@@ -87,17 +87,22 @@ export class User_LayoutComponent implements OnInit {
     this.route.params.subscribe(params => {
       this.projectId = params['id'];
     });
-    const userID = localStorage.getItem('userID');
+    const userID = localStorage.getItem('currentUser');
+    console.log(userID);
+
     this.userService.getUserInfo(userID).subscribe(
       (data) => {
         this.userData = data.userLogin;
+        console.log(this.userData);
+        console.log(data.userLogin);
       },
       (error) => {
-        console.error('Error fetching user data:', error);
+        console.error('Không có dữ liệu từ người dùng', error);
       }
     );
+
     this.route.params.subscribe((params) => {
-      this.teamID = +params['id'];
+      this.teamID = + params['id'];
       this.userService.getProjectTeamID(this.teamID).subscribe(
         (data) => {
           this.teamData = data.projectTeam;

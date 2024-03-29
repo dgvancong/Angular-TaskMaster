@@ -40,9 +40,11 @@ export class UserInterfaceService {
   getUsers(): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}`);
   }
+
   registerUser(user: any): Observable<any> {
     return this.http.post<any>(`${this.apiUrl}/register/`, user);
   }
+
   login(user: { emailAddress: string; password: string }) {
     return this.http.post<any>(`${this.apiUrl}/login`, user).pipe(
       tap((response) => {
@@ -53,8 +55,9 @@ export class UserInterfaceService {
       })
     );
   }
+
   getUserInfo(userID:any): Observable<any> {
-    return this.http.get<any>(`${this.apiUrl}/userLogin/${userID}`);
+    return this.http.get<any>(`${this.apiUrl}/userlogin/${userID}`);
   }
 
   logout(): void {
