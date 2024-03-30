@@ -19,6 +19,12 @@ import { NzSelectModule } from 'ng-zorro-antd/select';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { formatDate } from '@angular/common';
 import { NzModalService } from 'ng-zorro-antd/modal';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzPopconfirmModule } from 'ng-zorro-antd/popconfirm';
+import { NzInputModule } from 'ng-zorro-antd/input';
+import { User_SidebarComponent } from '../sidebar/sidebar.component';
+import { NzLayoutModule } from 'ng-zorro-antd/layout';
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 
 @Component({
   selector: 'app-user-layout',
@@ -43,10 +49,15 @@ import { NzModalService } from 'ng-zorro-antd/modal';
     NzAlertModule,
     NzSelectModule,
     NzDatePickerModule,
+    NzPopconfirmModule,
+    NzInputModule,
+    User_SidebarComponent,
+    NzLayoutModule,
+    NzBreadCrumbModule
   ],
 })
 export class User_LayoutComponent implements OnInit {
-  constructor( private route: ActivatedRoute ,private router: Router, private userService: UserInterfaceService , private modal: NzModalService){}
+  constructor( private route: ActivatedRoute ,private router: Router, private userService: UserInterfaceService , private modal: NzModalService, private nzMessageService: NzMessageService){}
   userData: any;
   showEditor = false;
   users: any[] = [];
@@ -58,6 +69,8 @@ export class User_LayoutComponent implements OnInit {
   dateFormat = 'yyyy-MM-dd';
   projectId :any;
   projectData: any;
+  isCollapsed = false;
+  isCollapsedBar: boolean = false;
 
   task = {
     projectID: '',
@@ -73,48 +86,32 @@ export class User_LayoutComponent implements OnInit {
     actualHoursSpent: '',
     taskManagerID: ''
   };
-  logout() {
-    this.userService.logout();
-    this.router.navigate(['user/login']);
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      this.projectId = params['id'];
+    });
+
+    this.userLogin();
+    this.getProjectTeamID();
+    this.getProjectData();
+    this.fetchProject();
   }
+
+// Công tắt của NG-ZRRO
   openDrawer(): void {
     this.visible = true;
   }
   closDrawer(): void {
     this.visible = false;
   }
-  ngOnInit(): void {
-    this.route.params.subscribe(params => {
-      this.projectId = params['id'];
-    });
-    const userID = localStorage.getItem('currentUser');
-    console.log(userID);
-
-    this.userService.getUserInfo(userID).subscribe(
-      (data) => {
-        this.userData = data.userLogin;
-        console.log(this.userData);
-        console.log(data.userLogin);
-      },
-      (error) => {
-        console.error('Không có dữ liệu từ người dùng', error);
-      }
-    );
-
-    this.route.params.subscribe((params) => {
-      this.teamID = + params['id'];
-      this.userService.getProjectTeamID(this.teamID).subscribe(
-        (data) => {
-          this.teamData = data.projectTeam;
-          console.log("Thành viên dự án :",this.teamData);
-        },
-        (error) => {
-          console.error('Error fetching project team data:', error);
-        }
-      );
-    });
-    this.getProjectData();
-    this.fetchProject();
+  handleCancel(): void {
+    this.isVisible = false;
+  }
+  open(): void {
+    this.visible = true;
+  }
+  close(): void {
+    this.visible = false;
   }
   showModal(): void {
     this.isVisible = true;
@@ -142,16 +139,12 @@ export class User_LayoutComponent implements OnInit {
       }
     );
   }
-  handleCancel(): void {
-    this.isVisible = false;
-  }
-  open(): void {
-    this.visible = true;
-  }
-  close(): void {
-    this.visible = false;
-  }
+  toggleSidebar() {
+    this.isCollapsedBar = !this.isCollapsedBar;
+    console.log('ok');
 
+  }
+// Hàm call api của tầng
   fetchUser() {
     this.userService.getUsers().subscribe(
       (response) => {
@@ -185,5 +178,38 @@ export class User_LayoutComponent implements OnInit {
     } else {
       console.error('projectId không được định nghĩa. Không thể lấy dự án theo ID.');
     }
+  }
+  userLogin(){
+    const userID = localStorage.getItem('userID');
+    this.userService.getUserInfo(userID).subscribe(
+      (data) => {
+        this.userData = data.userLogin;
+      },
+      (error) => {
+        console.error('Không có dữ liệu từ người dùng', error);
+      }
+    );
+  }
+  getProjectTeamID(){
+    this.route.params.subscribe((params) => {
+      this.teamID = + params['id'];
+      this.userService.getProjectTeamID(this.teamID).subscribe(
+        (data) => {
+          this.teamData = data.projectTeam;
+          console.log("Thành viên dự án :",this.teamData);
+        },
+        (error) => {
+          console.error('Error fetching project team data:', error);
+        }
+      );
+    });
+  }
+  confirm() {
+    this.nzMessageService.info('click confirm');
+    this.userService.logout();
+    this.router.navigate(['user/login']);
+  }
+  cancel() {
+    this.nzMessageService.info('click cancel');
   }
 }

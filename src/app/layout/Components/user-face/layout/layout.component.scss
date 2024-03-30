@@ -1,6 +1,5 @@
 .css-daqs5i {
   height: 56px;
-  grid-area: top-navigation;
   position: fixed;
   z-index: 2;
   top: 0px;
@@ -10,11 +9,8 @@
 .css-1roldm0 {
   box-sizing: border-box;
   height: 56px;
-  padding-right:  12px;
-  padding-left:  12px;
   position: relative;
   align-items: center;
-  flex-shrink: 0;
   border-bottom: 1px solid #EBECF0;
 }
 .css-vtikxo {
@@ -104,10 +100,7 @@
     color: inherit;
     cursor: pointer;
 }
-a {
-    color:  #0052CC;
-    text-decoration: none;
-}
+
 .css-12mte9y {
   display: inline-block;
   position: relative;
@@ -469,45 +462,8 @@ a {
     transition-duration: 0ms !important;
   }
 }
-.css-vnrk9l {
-  height: 24px;
-  width: 24px;
-  -webkit-box-align: stretch;
-  align-items: stretch;
-  background-color: transparent;
-  border-radius: 50%;
-  box-sizing: content-box;
-  cursor: inherit;
-  display: flex;
-  flex-direction: column;
-  -webkit-box-pack: center;
-  justify-content: center;
-  outline: none;
-  overflow: hidden;
-  position: static;
-  transform: translateZ(0px);
-  transition: transform 200ms ease 0s, opacity 200ms ease 0s;
-  box-shadow: transparent 0px 0px 0px 2px;
-  border: none;
-  margin:  2px;
-  padding:  0px;
-  font-size: inherit;
-  font-family: inherit;
-}
-.css-13ep12v {
-  display: flex;
-  width: 100%;
-  height: 100%;
-  flex: 1 1 100%;
-}
-img, fieldset {
-  border: 0;
-}
 .css-me4kch:first-of-type {
   margin-left: 0px;
-}
-.css-vtikxo > * {
-  flex-shrink: 0;
 }
 ._1ul911kg {
   min-width: 234px;
@@ -755,11 +711,6 @@ small {
   padding-left: 0;
   padding-right: 0;
 }
-.q2PzD_Dkq1FVX3 {
-  overflow-x: hidden;
-  overflow-y: auto;
-  padding: 12px;
-}
 ._8zTBxn0m5lTMy {
   display: flex;
   flex-direction: row;
@@ -852,13 +803,6 @@ input[type=checkbox] {
   position: absolute;
   inset-block-start: 2px;
 }
-.css-14u1mwe > span:last-of-type {
-  inset-inline-end: 3px;
-}
-.css-14u1mwe > span {
-  position: absolute;
-  inset-block-start: 2px;
-}
 .iUcMblFAuq9LKn {
   background-color: transparent;
   border: none;
@@ -923,23 +867,6 @@ input[type=checkbox] {
   right: 0;
   padding: 0 8px;
 }
-// .Om59gd_FtHVFoG img {
-//   display: block;
-//   margin-bottom: 32px;
-//   height: 133px;
-// }
-// .Om59gd_FtHVFoG img, .Om59gd_FtHVFoG h3 {
-//   opacity: 0;
-//   pointer-events: none;
-// }
-// .Om59gd_FtHVFoG h3 {
-//   font-size: 20px;
-//   font-weight: 500;
-//   line-height: 1.2;
-//   margin-bottom: 24px;
-// }
-
-
 .rX4pAv5sWHFNjp {
   color: #172b4d;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Noto Sans', 'Ubuntu', 'Droid Sans', 'Helvetica Neue', sans-serif;
@@ -1400,7 +1327,7 @@ a, a:hover {
 .css-q5x77e {
   margin-top: 8px;
 }
-.css-w9huf[data-invalid], .css-w9huf[data-invalid]:hover {
+.css-w9huf[data-invalid]:hover {
   border-color: #DE350B;
 }
 .css-w9huf {
@@ -1423,23 +1350,6 @@ a, a:hover {
   overflow-wrap: break-word;
   vertical-align: top;
   pointer-events: auto;
-}
-.css-1cab8vv:not([data-compact]) {
-  padding: 8px 6px;
-  height: 2.57em;
-}
-.css-1cab8vv {
-  background-color: transparent;
-  border: 0px;
-  box-sizing: border-box;
-  color: inherit;
-  cursor: inherit;
-  font-size: 14px;
-  min-width: 0px;
-  outline: none;
-  width: 100%;
-  line-height: 1.42857;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 .css-16aevhh {
   font-size: 0.857143em;
@@ -1598,17 +1508,6 @@ a, a:hover {
   font-size: inherit;
   font-family: inherit;
 }
-.css-vnrk9l::after {
-  background-color: transparent;
-  inset: 0px;
-  border-radius: 50%;
-  content: " ";
-  opacity: 0;
-  pointer-events: none;
-  position: absolute;
-  transition: opacity 200ms ease 0s;
-  width: 100%;
-}
 .iwRRFK > button {
   margin-top: 4px;
 }
@@ -1677,19 +1576,6 @@ input:not([type=checkbox]):not([type=radio]), select, textarea {
 .css-1cab8vv:not([data-compact]) {
   padding: 8px  6px;
   height: 2.57em;
-}
-.css-1cab8vv {
-  background-color: transparent;
-  border: 0px;
-  box-sizing: border-box;
-  color: inherit;
-  cursor: inherit;
-  font-size: 14px;
-  min-width: 0px;
-  outline: none;
-  width: 100%;
-  line-height: 1.42857;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 .css-1s25hsw {
   -webkit-box-align: center;
@@ -1766,7 +1652,6 @@ input:not([type=checkbox]):not([type=radio]), select, textarea {
   line-height: 1.42857;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
-/* Định dạng chung cho phần select */
 .custom-select {
   padding: 8px;
   font-size: 16px;
@@ -1816,4 +1701,8 @@ input:not([type=checkbox]):not([type=radio]), select, textarea {
   width: 100%;
   line-height: 1.42857;
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+.rounded-circle {
+  border-radius: 50% !important;
+  margin-bottom: 14px;
 }

@@ -37,22 +37,16 @@ export class UserLoginComponent {
   login() {
     this.userService.login(this.user).subscribe(
       (response) => {
-        if (response && response.success) {
-          localStorage.setItem('token', response.token);
-          localStorage.setItem('currentUser', JSON.stringify(response.user));
-          this.message.success('Đăng nhập thành công').onClose.subscribe(() => {
-            this.router.navigate(['/user/welcome-home']);
-          });
-        } else {
-          this.message.error('Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.');
-        }
+        console.log('login successful :', response);
+        this.message.success('Đăng nhập thành công').onClose.subscribe(() => {
+        this.router.navigate(['/user/welcome-home']);
+        });
       },
       (error) => {
-        this.message.error('Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.');
+        this.message.error('Đăng nhập thất bại. Vui lòng kiểm tra lại thông tin đăng nhập.', error);
       }
-    );
+      );
   }
-
 
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
