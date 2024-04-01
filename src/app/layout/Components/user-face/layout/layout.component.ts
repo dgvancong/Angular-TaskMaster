@@ -205,11 +205,11 @@ export class User_LayoutComponent implements OnInit {
     });
   }
   confirm() {
-    this.nzMessageService.info('click confirm');
+    this.nzMessageService.success('Đăng xuất thành công');
     this.userService.logout();
     this.router.navigate(['user/login']);
   }
   cancel() {
-    this.nzMessageService.info('click cancel');
+    this.nzMessageService.info('Hủy');
   }
 }

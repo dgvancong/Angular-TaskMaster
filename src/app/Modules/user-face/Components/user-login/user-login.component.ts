@@ -28,12 +28,15 @@ import { FormGroup, FormBuilder, Validators, FormsModule, ReactiveFormsModule } 
   styleUrl: './user-login.component.scss'
 })
 export class UserLoginComponent {
+
   user = {
     emailAddress: '',
     password: ''
   };
   showPassword = false;
+
   constructor(private userService: UserInterfaceService, private router: Router, private message: NzMessageService) { }
+
   login() {
     this.userService.login(this.user).subscribe(
       (response) => {
@@ -51,4 +54,5 @@ export class UserLoginComponent {
   togglePasswordVisibility() {
     this.showPassword = !this.showPassword;
   }
+
 }
