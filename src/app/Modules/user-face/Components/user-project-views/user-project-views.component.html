@@ -375,7 +375,7 @@
             </div>
           </div>
           <div class="_kqswh2mm _n3tdpxbi _aetrb3bt _18postnw _z0ai1osq _1qdg1osq _1hfk37p7 _15l2idpf _19doidpf _1ywuglyw">
-            <nz-table #rowSelectionTable nzShowSizeChanger [nzData]="projects"(nzCurrentPageDataChange)="onCurrentPageDataChange($event)">
+            <nz-table #rowSelectionTable nzShowSizeChanger [nzData]="projects">
             <thead>
               <tr>
                 <th nzWidth="50px" [(nzChecked)]="checked" [nzIndeterminate]="indeterminate"(nzCheckedChange)="onAllChecked($event)" nzLeft></th>

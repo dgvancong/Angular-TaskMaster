@@ -22,6 +22,13 @@ import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
 import { DatePipe } from '@angular/common';
 import { Project, ResponseDataProject } from '../../../../Shares/user-model/project';
 
+export interface Data {
+  id: number;
+  name: string;
+  age: number;
+  address: string;
+  disabled: boolean;
+}
 
 @Component({
   selector: 'app-user-project-views',
@@ -75,9 +82,10 @@ export class UserProjectViewsComponent implements OnInit {
   dateFormat = 'yyyy-MM-dd';
   projects: Project[] = [];
   checked = false;
+  loading = false;
   indeterminate = false;
-  listOfCurrentPageData: readonly Task[] = [];
-  listOfData: readonly Task[] = [];
+  listOfData: readonly Data[] = [];
+  listOfCurrentPageData: readonly Data[] = [];
   setOfCheckedId = new Set<number>();
   constructor(private datePipe: DatePipe, private userService: UserInterfaceService,private message: NzMessageService, private modal: NzModalService){}
   ngOnInit(): void {
@@ -105,7 +113,7 @@ export class UserProjectViewsComponent implements OnInit {
     this.listOfCurrentPageData.forEach(item => this.updateCheckedSet(item.id, value));
     this.refreshCheckedStatus();
   }
-  onCurrentPageDataChange($event: readonly Task[]): void {
+  onCurrentPageDataChange($event: readonly Data[]): void {
     this.listOfCurrentPageData = $event;
     this.refreshCheckedStatus();
   }

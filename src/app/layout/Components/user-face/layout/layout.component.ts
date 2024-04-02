@@ -97,7 +97,6 @@ export class User_LayoutComponent implements OnInit {
     this.userLogin();
     this.getProjectTeamID();
     this.getProjectData();
-    this.fetchProject();
   }
 
 // Công tắt của NG-ZRRO
@@ -144,21 +143,29 @@ export class User_LayoutComponent implements OnInit {
   }
   toggleSidebar() {
     this.isCollapsedBar = !this.isCollapsedBar;
-    console.log('ok');
-
   }
 // Hàm call api của tầng
-  fetchUser() {
-    this.userService.getUsers().subscribe(
-      (response) => {
-        this.users = response;
-      },
-      (error) => {
-        console.error('Error fetching roles:', error);
-      }
-    );
-  }
-  fetchProject() {
+  // fetchUser() {
+  //   this.userService.getUsers().subscribe(
+  //     (response) => {
+  //       this.users = response;
+  //     },
+  //     (error) => {
+  //       console.error('Error fetching roles:', error);
+  //     }
+  //   );
+  // }
+  // fetchProject() {
+  //   this.userService.getProejct().subscribe(
+  //     (response: ResponseDataProject) => {
+  //       this.projects = response.data;
+  //     },
+  //     (error) => {
+  //       console.error('Lỗi dữ liệu về thông tin dự án:', error);
+  //     }
+  //   );
+  // }
+  getProjectData() {
     this.userService.getProejct().subscribe(
       (response: ResponseDataProject) => {
         this.projects = response.data;
@@ -167,20 +174,6 @@ export class User_LayoutComponent implements OnInit {
         console.error('Lỗi dữ liệu về thông tin dự án:', error);
       }
     );
-  }
-  getProjectData() {
-    if (this.projectId) {
-      this.userService.getProjectById(this.projectId).subscribe(
-        (data) => {
-          this.projectData = data;
-        },
-        (error) => {
-          console.error('Lỗi khi lấy dự án theo ID:', error);
-        }
-      );
-    } else {
-      console.error('projectId không được định nghĩa. Không thể lấy dự án theo ID.');
-    }
   }
   userLogin(){
     const userID = localStorage.getItem('userID');
