@@ -12,6 +12,8 @@ import { ActivatedRoute } from '@angular/router';
 import { NzTableModule } from 'ng-zorro-antd/table';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 import { UserWorkReportsComponent } from '../user-work-reports/user-work-reports.component';
+import { Project, ResponseDataProject } from '../../../../Shares/user-model/project';
+import { Task, ResponseDataTask } from '../../../../Shares/user-model/task';
 
 @Component({
   selector: 'app-user-project',
@@ -33,10 +35,9 @@ import { UserWorkReportsComponent } from '../user-work-reports/user-work-reports
   ]
 })
 export class UserProjectComponent implements OnInit {
-  projects: any[] = [];
-  tasks: any[] = [];
+  tasks: Task[] = [];
   tabs = ['Làm việc trên', 'Đã xem', 'Giao cho tôi', 'Được gắn sao'];
-  project: any;
+  projects: Project[] = [];
 
   getTabData(tab: string): string[] {
     switch (tab) {
@@ -70,21 +71,21 @@ export class UserProjectComponent implements OnInit {
   }
   getProejct(): void {
     this.userService.getProejct().subscribe(
-      (data) => {
-        this.projects = data;
+      (response: ResponseDataProject) => {
+        this.projects = response.data;
       },
       (error) => {
-        console.error('Error fetching projects:', error);
+        console.error('Lỗi dữ liệu về thông tin dự án:', error);
       }
     );
   }
   getTask(): void {
     this.userService.getTask().subscribe(
-      (data) => {
-        this.tasks = data;
+      (response: ResponseDataTask) => {
+        this.tasks = response.data;
       },
       (error) => {
-        console.error('Error fetching projects:', error);
+        console.error('Lỗi dữ liệu về thông tin dự án:', error);
       }
     );
   }

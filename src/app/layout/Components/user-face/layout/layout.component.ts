@@ -25,6 +25,8 @@ import { NzInputModule } from 'ng-zorro-antd/input';
 import { User_SidebarComponent } from '../sidebar/sidebar.component';
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+import { Project, ResponseDataProject } from '../../../../Shares/user-model/project';
+
 
 @Component({
   selector: 'app-user-layout',
@@ -63,7 +65,7 @@ export class User_LayoutComponent implements OnInit {
   users: any[] = [];
   teamID : any;
   teamData: any;
-  projects: any[] = [];
+  projects: Project[] = [];
   isVisible = false;
   visible = false;
   dateFormat = 'yyyy-MM-dd';
@@ -71,6 +73,7 @@ export class User_LayoutComponent implements OnInit {
   projectData: any;
   isCollapsed = false;
   isCollapsedBar: boolean = false;
+
 
   task = {
     projectID: '',
@@ -157,11 +160,11 @@ export class User_LayoutComponent implements OnInit {
   }
   fetchProject() {
     this.userService.getProejct().subscribe(
-      (response) => {
-        this.projects = response;
+      (response: ResponseDataProject) => {
+        this.projects = response.data;
       },
       (error) => {
-        console.error('Error fetching roles:', error);
+        console.error('Lỗi dữ liệu về thông tin dự án:', error);
       }
     );
   }

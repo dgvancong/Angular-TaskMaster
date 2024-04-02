@@ -8,3 +8,7 @@ export interface User {
   lastLogin: string;
   createdDate: string;
 }
+
+export interface ResponseData {
+  data: User[];
+}

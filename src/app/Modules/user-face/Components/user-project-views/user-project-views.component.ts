@@ -19,8 +19,9 @@ import { NzModalModule } from 'ng-zorro-antd/modal';
 import { NzModalService } from 'ng-zorro-antd/modal';
 import { NzButtonModule } from 'ng-zorro-antd/button';
 import { NzDatePickerModule } from 'ng-zorro-antd/date-picker';
-import { formatDate } from '@angular/common';
 import { DatePipe } from '@angular/common';
+import { Project, ResponseDataProject } from '../../../../Shares/user-model/project';
+
 
 @Component({
   selector: 'app-user-project-views',
@@ -72,7 +73,7 @@ export class UserProjectViewsComponent implements OnInit {
     userID: '',
   };
   dateFormat = 'yyyy-MM-dd';
-  projects: any[] = [];
+  projects: Project[] = [];
   checked = false;
   indeterminate = false;
   listOfCurrentPageData: readonly Task[] = [];
@@ -115,11 +116,11 @@ export class UserProjectViewsComponent implements OnInit {
   // Lấy danh sách dự án
   getProejct(): void {
     this.userService.getProejct().subscribe(
-      (data) => {
-        this.projects = data;
+      (response: ResponseDataProject) => {
+        this.projects = response.data;
       },
       (error) => {
-        console.error('Error fetching projects:', error);
+        console.error('Lỗi dữ liệu về thông tin dự án:', error);
       }
     );
   }
@@ -141,7 +142,6 @@ export class UserProjectViewsComponent implements OnInit {
   deleteProject(id: any): void {
     this.userService.DeleteProject(id).subscribe(
       (data: any) => {
-        console.log(data);
         if (data.message === "Đã xóa dự án và chi tiết của dự án") {
           this.modal.success({
             nzTitle: 'Thành công',
@@ -164,7 +164,6 @@ export class UserProjectViewsComponent implements OnInit {
   editedProject: any = {};
   selectedProject: any;
   showModal(selectedProject: any): void {
-    console.log('showModal is called with selectedProject:', selectedProject);
     this.selectedProject = selectedProject;
       if (this.selectedProject) {
         setTimeout(() => {

@@ -394,7 +394,7 @@
             </thead>
             <tbody>
               <tr *ngFor="let data of projects">
-                <td  nzLeft [nzChecked]="setOfCheckedId.has(data.id)" (nzCheckedChange)="onItemChecked(data.id, $event)"></td>
+                <td  nzLeft [nzChecked]="setOfCheckedId.has(data.projectID)" (nzCheckedChange)="onItemChecked(data.projectID, $event)"></td>
                 <td [routerLink]="['/user/work/'+ data.projectID]">{{ data.projectName }}</td>
                 <td>{{ data.projectKey }}</td>
                 <td style="font-size: 11px;font-weight: 600;"><p-progressBar [value]="data.progress"></p-progressBar></td>

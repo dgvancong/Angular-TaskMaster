@@ -19,11 +19,11 @@ export class UserInterfaceService {
   }
 
   getProjectById(projectID: any): Observable<any> {
-    return this.http.get<any>(`${this.projectUrl}/get-project/` + projectID);
+    return this.http.get<any>(`${this.projectUrl}` + projectID);
   }
 
   DeleteProject(projectID: any): Observable<any> {
-    return this.http.delete<any>(`${this.projectUrl}/remove/` + projectID);
+    return this.http.delete<any>(`${this.projectUrl}/delete/` + projectID);
   }
 
   updateProject(projectID: string, projectData: any): Observable<any> {
@@ -55,7 +55,6 @@ export class UserInterfaceService {
       })
     );
   }
-
   getUserInfo(userID:any): Observable<any> {
     return this.http.get<any>(`${this.apiUrl}/userlogin/${userID}`);
   }

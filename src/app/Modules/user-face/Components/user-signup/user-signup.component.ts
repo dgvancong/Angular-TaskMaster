@@ -53,10 +53,9 @@ export class UserSignupComponent implements OnInit {
     this.userService.getRoles().subscribe(
       (response: ResponseData) => {
         this.roles = response.data;
-        console.log(response);
       },
       (error) => {
-        console.error('Error fetching roles:', error);
+        console.error('Lỗi dữ liệu về phân quyền:', error);
       }
     );
   }
